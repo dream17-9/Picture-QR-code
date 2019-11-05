@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate3d(-50%, -50%, 0);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid red;
+            width: 400px;
+            height: 500px;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="ad_img" id="erweima">
+            <img id="qrCodeIco" style="display: none;" src="./laoshan.png" alt="">
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="./jquery-3.3.1.min.js"></script>
+<script src="./jquery.qrcode.js"></script>
+<script src="./qrcode.js"></script>
+<script>
+    $('#erweima').qrcode("www.baidu.com");
+    $("#erweima canvas")[0].getContext('2d').drawImage($("#qrCodeIco")[0], 100, 100, 65, 65);
+// 100, 100, 65, 65分别是X位置(一般取二维码宽*0.4)，Y位置(一般取二维码高*0.4)，小图片宽度，小图片高度
+</script>
